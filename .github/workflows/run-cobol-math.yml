@@ -14,7 +14,7 @@ jobs:
           sudo apt-get install -y gnucobol
 
       - name: Compile and Run
-              run: |
-                cobc -x -free math.cob
-                # Passing 12 and 5 as arguments
-                ./math 12 5
+        run: |
+          cobc -x -free math.cob
+          # Passing 12 and 5 as arguments
+          ./math 12 5
