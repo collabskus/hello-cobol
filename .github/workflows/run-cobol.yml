@@ -9,9 +9,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install GnuCOBOL
-        run: sudo apt-get update && sudo apt-get install -y gnucobol
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gnucobol
 
       - name: Compile and Run
         run: |
-          cobc -x hello.cob
+          # The -free flag ignores the 1950s punch-card column rules
+          # The -x flag creates an executable
+          cobc -x -free hello.cob
           ./hello
